@@ -12,9 +12,8 @@ w = tf.Variable(1.0, name='weight')
 y = tf.mul(w, x_data, name='output')+b
 
 # 设置 最小化方差
-lose = tf.reduce_mean(tf.square(y - y_data))
-optimizer = tf.train.GradientDescentOptimizer(0.025)
-train = optimizer.minimize(lose)
+lose	= tf.reduce_mean(tf.square(y - y_data))
+train	= tf.train.GradientDescentOptimizer(0.025).minimize(lose)
 
 # 初始化变量 
 init = tf.global_variables_initializer()
